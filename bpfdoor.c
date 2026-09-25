@@ -124,6 +124,7 @@ int main() {
 }
 
 void apply_bpf_filter(int sd) {
+    // tcpdump udp and dst port 53 -dd
     struct sock_filter filter[] = {
         { 0x28, 0, 0, 0x0000000c },
         { 0x15, 0, 4, 0x000086dd },
